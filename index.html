@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <title>Library</title>
+
+
+        <script src="https://kit.fontawesome.com/deff8bee85.js" crossorigin="anonymous"></script>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="/__/firebase/7.20.0/firebase-app.js"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="/__/firebase/7.20.0/firebase-analytics.js"></script>
+        <script src="/__/firebase/7.20.0/firebase-database.js"></script>
+        
+        <!-- Initialize Firebase -->
+        <script src="/__/firebase/init.js"></script>
+            
+    </head>
+    <body>
+        <header>
+            <div><h1>xiaohan's library</h1></div>
+            <form class="form container">
+                <h2>enter book details</h2>
+                <label for="title"><b>title</b></label>
+                <input type="text" placeholder="book title" id="title" name="title" class="input" required>
+                <label for="author"><b>author</b></label>
+                <input type="text" placeholder="author" id="author" name="author" class="input" required>
+                <label for="nopages"><b>no. pages</b></label>
+                <input type="number" placeholder="number of pages read" id="nopages" name="pages" class="input" required>
+                <button type="submit" id="submitbtn" onclick=onClick()>+ add book</button>
+            </form>  
+        </header>
+        <div class="container">
+            <table id="table">
+                <tr id="mainrow">
+                    <th id="maincolumn">title</th>
+                    <th id="maincolumn">author</th>
+                    <th id="maincolumn">no. pages</th>
+                    <th id="maincolumn">read status</th>
+                    <th id="maincolumn">remove</th>
+                </tr>
+            </table>
+        </div>
+        <footer>
+            <div id="line"></div>
+            <p>created by xiaohan ma</p>
+        </footer>
+        <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var firebaseConfig = {
+              apiKey: "AIzaSyBhrUF-b4ncQ-y7u1AVhOmB8tNeK2uwMvU",
+              authDomain: "library-d449a.firebaseapp.com",
+              databaseURL: "https://library-d449a.firebaseio.com",
+              projectId: "library-d449a",
+              storageBucket: "library-d449a.appspot.com",
+              messagingSenderId: "135160625576",
+              appId: "1:135160625576:web:8b10d73a7f170fd7cdc59d",
+              measurementId: "G-HXVG753BSW"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            
+            var database = firebase.database();
+          </script>
+
+    </body>
+    <script type="text/javascript" src="library.js"></script>
+    
+</html>

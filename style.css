@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+body {
+    font-family: 'Architects Daughter', cursive;
+    color: rgb(25, 104, 104);
+    text-align: center;
+}
+html, 
+body {
+    height: 100%;
+    display: table; 
+    width: 100%; 
+}
+/*header: my library title, empty divs, new book button*/
+header {
+    margin-bottom: 30px;
+    height: 300px;
+    width: 100%;
+    background-color: rgb(76, 159, 161);
+    left: 0;
+    right: 0;
+    top: 0;
+    position: relative;
+    color: white;
+    grid-template-areas: 
+      "c c c c a d d d"
+      "c c c c a d d d"
+      "c c c c a d d d"
+      "c c c c a d d d";
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    display: grid;
+    font-family: 'Montserrat', sans-serif;
+}
+header > div {
+    border: 5px solid white;
+    border-radius: 15px;
+    grid-area: c;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    height: 60%;
+    padding: 6% 30% 10% 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+header > div > h1 {
+    font-size: 35px;
+}
+header > form {
+    grid-area: d;
+    justify-self: center;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    border: 5px solid white;
+    border-radius: 15px;
+    height: 60%;
+    padding: 3% 8% 6% 8%;
+    grid-template-areas: 
+    "a a a a a a a a"
+    "b b b c c c c c"
+    "d d d e e e e e"
+    "f f f g g g g g"
+    "h h h h h h h h";
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    display: grid;
+}
+header > form > h2 {
+    grid-area: a;
+    justify-self: start;
+    text-align: center;
+}
+input {
+    margin: 1px 0;
+}
+label[for=title] {
+    grid-area: b;
+}
+input[name=title] {
+    grid-area: c;
+}
+label[for=author] {
+    grid-area: d;
+}
+input[name=author] {
+    grid-area: e;
+}
+label[for=nopages] {
+    grid-area: f;
+}
+input[name=pages] {
+    grid-area: g;
+}
+#submitbtn {
+    font-size: 15px;
+    color: teal;
+    background-color: white;
+    border: white;
+    border-radius: 20px;
+    padding: 2.5px 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    grid-area: h;
+    justify-self: center;
+}
+@media (max-width: 697px) {
+    header {
+        grid-template-areas: 
+          "c c c c"
+          "c c c c"
+          "d d d d"
+          "d d d d"
+          "d d d d";
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        height: auto; 
+        padding-bottom: 3%;
+    }
+    header > div {
+        margin-top: auto;
+        height: auto;
+        width: 100%;
+        margin-bottom: auto;
+        padding: 5% 6% 7% 6%;
+    }
+    header > div > h1 {
+        font-size: 30px;
+    }
+    header > form {
+        width: 100%;
+        height: auto;
+        margin-top: auto;
+        padding-bottom: 1%;
+        padding-top: 1%;
+    }
+    header > form > h2 {
+        font-size: 18px;
+    }
+    header > form > label {
+        font-size: 13px;
+    }
+    input {
+        height: 90%;
+    }
+}
+/*footer*/
+footer {
+    height: 160px;
+    width: 100%;
+    margin-top: 100%;
+    position: relative;
+    left: 0;
+    right: 0;
+    background-color: rgb(33, 60, 119);
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    justify-content: center;
+    bottom: 0;
+    color: white;
+    display: table-row;
+}
+footer, p {
+    padding: 15px 0px 10px 0px;
+}
+#line{
+    width: 80%;
+    background-color: white;
+    height: 1px;
+    margin: 40px 10% 20px 10%;
+    padding-left: 100px;
+}
+/*actual content*/
+.main{
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: auto;
+}
+@media (max-width: 600px) {
+    .maincolumn > h2 {
+        font-size: 14px;
+    }
+}   
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    width: 70%;
+}
+table {
+    width: 100%;
+}
+#mainrow {
+    background-color: rgb(76, 159, 161);
+    color: white;
+    font-size: 20px;
+}
+th {
+    width: 20%;
+    font-size: 17px;
+}
+#maincolumn {
+    color: white;
+}
+
+#readstatusButton,
+#trashButton {
+    padding: auto;
+    border: none;
+    background: white;
+    cursor: pointer;
+    font-size: 1rem;
+    outline: none;
+    color: grey;
+}
+#trashButton{
+    color: rgb(212, 57, 57);
+}
